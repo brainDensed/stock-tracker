@@ -1,0 +1,27 @@
+# Node
+node_modules/
+frontend/.next/
+
+# Logs
+*.log
+
+# OS/system files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Env
+.env
+*.env
+
+# Go
+backend/bin/
+backend/*.exe
+backend/tmp/
+
+# Optional docker stuff
+**/Dockerfile.*
+.dockerignore
