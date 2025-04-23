@@ -18,6 +18,12 @@ Thumbs.db
 *.env
 .env.local
 
+# Ignore .env.local
+frontend/.env.local
+
+# Ignore package-lock.json
+frontend/package-lock.json
+
 # Go
 backend/bin/
 backend/*.exe
@@ -26,3 +32,4 @@ backend/tmp/
 # Optional docker stuff
 **/Dockerfile.*
 .dockerignore
+.env.local
