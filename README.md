@@ -1,9 +1,27 @@
-Production-ready full-stack auth template.
+# ⚡ Full-Stack Auth Template — Go + Next.js + Redis + PostgreSQL
 
-✅ Go backend (with email verification & logout from all devices)
-✅ Next.js frontend (clean UI for auth)
-✅ Dockerized PostgreSQL & Redis setup
-✅ Secure token-based flow (no junk users in DB)
-✅ Ready to go in minutes
+Secure, production-ready user authentication system built with:
 
-Built for devs who want to skip boilerplate and build fast.
+- 🚀 **Golang** (Gin/Fiber compatible) backend
+- ⚛️ **Next.js** frontend (TypeScript)
+- 🐘 **PostgreSQL** for user data
+- 🧠 **Redis** for temporary token/session management
+- 🐳 **Docker** for full environment setup
+
+> Perfect for SaaS, startups, and indie hackers who want to skip boilerplate and get straight to building.
+
+---
+
+## 🔐 Features
+
+- ✅ **Email verification** before user account is created  
+- ✅ **Logout from all devices** (invalidates all sessions)
+- ✅ **Modular Go backend** (easy to extend)
+- ✅ **Typed frontend API layer** (Next.js + TypeScript)
+- ✅ **.env.example** and fully dockerized setup
+- ✅ **Production-ready auth flow**
+
+---
+
+## 📁 Folder Structure
+
