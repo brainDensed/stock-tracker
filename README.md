@@ -22,6 +22,3 @@ Secure, production-ready user authentication system built with:
 - ✅ **Production-ready auth flow**
 
 ---
-
-## 📁 Folder Structure
-
