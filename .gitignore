@@ -16,6 +16,7 @@ Thumbs.db
 # Env
 .env
 *.env
+.env.local
 
 # Go
 backend/bin/
