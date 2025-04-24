@@ -37,7 +37,7 @@ Attribution is **not required**, but appreciated if you want to support the auth
 ## Support
 
 This template is provided **as-is** without warranty. For support or customization, contact:  
-📧 shivam.nilay0807@gmail.com
+📧 connect@shivamhere.fyi
 
 ---
 
