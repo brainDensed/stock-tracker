@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"time"
 
 	"github.com/redis/go-redis/v9"
 	"gorm.io/driver/postgres"
@@ -25,10 +26,21 @@ func ConnectToPg() {
 	)
 
 	var err error
-	DB, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
-	if err != nil {
-		panic("Failed to connect to database")
+	maxRetries := 10
+	delay := 2 * time.Second
+
+	for i := 1; i <= maxRetries; i++ {
+		DB, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
+		if err == nil {
+			log.Println("✅ Connected to Postgres")
+			return
+		}
+
+		log.Printf("⏳ Attempt %d: Failed to connect to Postgres — %v", i, err)
+		time.Sleep(delay)
 	}
+
+	log.Fatal("❌ Could not connect to the database after multiple attempts")
 }
 
 func ConnectToRedis() {
