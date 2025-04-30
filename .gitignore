@@ -16,6 +16,7 @@ Thumbs.db
 # Env
 .env
 *.env
+.env.*
 .env.local
 
 # Ignore .env.local

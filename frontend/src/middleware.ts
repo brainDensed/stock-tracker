@@ -1,15 +1,27 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-// This function can be marked `async` if using `await` inside
+const PUBLIC_ROUTES = ['/', '/login', '/signup', '/about', '/profile'];
+
 export function middleware(request: NextRequest) {
-    const token = request.cookies.get('Authorization')?.value
-    if (!token) {
-        return NextResponse.redirect(new URL('/login', request.url))
+    const { pathname } = request.nextUrl;
+
+    // Allow public routes through
+    if (PUBLIC_ROUTES.includes(pathname)) {
+        return NextResponse.next();
     }
+
+    const token = request.cookies.get('Authorization')?.value;
+
+    if (!token) {
+        return NextResponse.redirect(new URL('/login', request.url));
+    }
+
+    return NextResponse.next();
 }
 
-// See "Matching Paths" below to learn more
 export const config = {
-    matcher: ['/profile', "/settings"],
+    matcher: [
+        '/((?!_next/static|_next/image|favicon.ico|images|css|js|fonts|api).*)',
+    ],
 }
