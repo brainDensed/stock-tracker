@@ -1,6 +1,14 @@
+"use client"
+
 import Navbar from "@/components/layout/navbar";
+import { useFetchNews } from "@/hooks/queries";
 
 export default function Home() {
+      const { data: news, isLoading, isError } = useFetchNews();
+      if (isLoading) return <p className="text-center mt-10">Loading news...</p>;
+      if (isError) return <p className="text-center mt-10 text-red-500">Failed to load news.</p>;
+    
+      console.log("news", news?.data);
   return (
     <>
       <Navbar />

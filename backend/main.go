@@ -39,6 +39,7 @@ func main() {
 		router.POST("/logout", middleware.RequireAuth, controllers.Logout)
 		router.POST("/logoutFromAllDevices", middleware.RequireAuth, controllers.LogoutFromAllDevices)
 		router.GET("/profile", middleware.RequireAuth, controllers.Validator)
+		router.GET("/news", middleware.RequireAuth, controllers.GetNews)
 	}
 	r.Run() // listen and serve on 0.0.0.0:8080
 }
