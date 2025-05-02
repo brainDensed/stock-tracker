@@ -1,12 +1,13 @@
 // hooks/queries/useUser.ts
 import { useQuery } from '@tanstack/react-query';
 import { api } from '@/lib/axios';
+import { NewsResponse } from '@/types/news';
 
 export const useFetchNews = () => {
   return useQuery({
     queryKey: ['news'],
     queryFn: async () => {
-      const res = await api.get('/news');
+      const res = await api.get<NewsResponse>('/news');
       return res.data;
     },
     staleTime: 1000 * 60 * 2, // 2 mins
