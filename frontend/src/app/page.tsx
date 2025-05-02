@@ -3,6 +3,7 @@
 import Navbar from "@/components/layout/navbar";
 import { useFetchNews } from "@/hooks/queries";
 import { format } from "date-fns";
+import Image from "next/image";
 
 export default function Home() {
   const { data: news, isLoading, isError } = useFetchNews();
@@ -24,7 +25,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="block bg-white shadow-md rounded-xl overflow-hidden hover:shadow-xl transition"
               >
-                <img src={article.image_url} alt={article.title} className="w-full h-48 object-cover" />
+                <Image src={article.image_url} alt={article.title} className="w-full h-48 object-cover" />
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-indigo-600">{article.title}</h3>
                   <p className="text-gray-700 mt-2">{article.description}</p>
