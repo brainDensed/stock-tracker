@@ -10,10 +10,10 @@ import (
 	"github.com/brainDensed/stock-tracker/models"
 )
 
-func FetchNews(symbols []string) (*models.News, error) {
+func FetchNews(symbols []string, page int64, limit int64) (*models.News, error) {
 	MAUX_KEY := os.Getenv("MARKETAUX_API_KEY")
 	joinedSymbols := strings.Join(symbols, ",")
-	MAUX_URL := fmt.Sprintf("https://api.marketaux.com/v1/news/all?symbols=%s&filter_entities=true&language=en&api_token=%s", joinedSymbols, MAUX_KEY)
+	MAUX_URL := fmt.Sprintf("https://api.marketaux.com/v1/news/all?symbols=%s&filter_entities=false&language=en&page=%d&limit=%d&api_token=%s", joinedSymbols, page, limit, MAUX_KEY)
 	res, err := http.Get(MAUX_URL)
 	if err != nil {
 		fmt.Println("Error fetching news:", err)
