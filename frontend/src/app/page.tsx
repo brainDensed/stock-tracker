@@ -25,7 +25,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="block bg-white shadow-md rounded-xl overflow-hidden hover:shadow-xl transition"
               >
-                <Image src={article.image_url} alt={article.title} className="w-full h-48 object-cover" />
+                <Image src={article.image_url} alt={article.title} className="w-full h-48 object-cover" unoptimized />
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-indigo-600">{article.title}</h3>
                   <p className="text-gray-700 mt-2">{article.description}</p>
