@@ -17,7 +17,7 @@ export default function Home() {
       <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-indigo-200">
         <section className="max-w-4xl mx-auto px-4">
           <div className="grid gap-6">
-            {news?.data?.map((article: any) => (
+            {news?.data?.map((article) => (
               <a
                 key={article.uuid}
                 href={article.url}
