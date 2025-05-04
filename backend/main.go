@@ -40,6 +40,8 @@ func main() {
 		router.POST("/logoutFromAllDevices", middleware.RequireAuth, controllers.LogoutFromAllDevices)
 		router.GET("/profile", middleware.RequireAuth, controllers.Validator)
 		router.GET("/news", middleware.RequireAuth, controllers.GetNews)
+		router.GET("/stock", middleware.RequireAuth, controllers.GetStockData)
+		router.GET("/top-movers", middleware.RequireAuth, controllers.GetTopMovers)
 	}
 	r.Run() // listen and serve on 0.0.0.0:8080
 }

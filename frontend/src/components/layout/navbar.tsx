@@ -10,8 +10,8 @@ export default function Navbar() {
             </Link>
             <div className="flex gap-4">
                 <>
-                    <Link href="/flights" className="text-gray-700 hover:text-indigo-600">
-                        Book Flights
+                    <Link href="/stocks" className="text-gray-700 hover:text-indigo-600">
+                        Track Stocks
                     </Link>
                 </>
             </div>
