@@ -19,6 +19,10 @@ export default function Home() {
   } = useFetchNews();
 
   useEffect(() => {
+    const target = loaderRef.current;
+  
+    if (!target) return;
+  
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && hasNextPage) {
@@ -27,13 +31,14 @@ export default function Home() {
       },
       { threshold: 1.0 }
     );
-
-    if (loaderRef.current) observer.observe(loaderRef.current);
-
+  
+    observer.observe(target);
+  
     return () => {
-      if (loaderRef.current) observer.unobserve(loaderRef.current);
+      observer.unobserve(target);
     };
   }, [fetchNextPage, hasNextPage]);
+  
 
   if (isLoading) return <p className="text-center mt-10">Loading news...</p>;
   if (isError) return <p className="text-center mt-10 text-red-500">Failed to load news.</p>;
