@@ -22,8 +22,8 @@ function Section({ title, data }: { title: string; data: StockDetails[] }) {
 export default function TopMovers() {
   const { data, isLoading, isError } = useFetchTopMovers();
 
-  if (isLoading) return <div className="p-4">Loading...</div>;
-  if (isError) return <div className="p-4 text-red-600">Failed to load top movers</div>;
+  if (isLoading) return <p className="text-center mt-10">Loading news...</p>;
+  if (isError) return <p className="text-center mt-10 text-red-500">Failed to load news.</p>;
 
   return (
     <div className="p-6 space-y-8">
