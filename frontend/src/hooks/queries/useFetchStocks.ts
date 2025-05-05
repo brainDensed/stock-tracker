@@ -7,7 +7,7 @@ export const useFetchTopMovers = () => {
         queryKey: ['top-movers'],
         queryFn: async () => {
             try {
-                const res = await api.get<TopMovers>('/top-movers');
+                const res = await api.get<TopMovers>('/stock/top-movers');
                 return res.data;
             } catch (error) {
                 console.error("Error fetching top movers:", error);

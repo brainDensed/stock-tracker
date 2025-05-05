@@ -9,7 +9,7 @@ function Section({ title, data }: { title: string; data: StockDetails[] }) {
       <div className="bg-white p-3 rounded-md shadow border border-gray-200">
         <h3 className="text-lg font-semibold mb-2 text-gray-700">{title}</h3>
         <div className="flex gap-3 overflow-x-auto" style={{ scrollbarWidth: "none" }}>
-          {data.map((mover) => (
+          {data?.map((mover) => (
             <div key={mover.ticker} className="snap-start">
               <TopMoverCard mover={mover} />
             </div>

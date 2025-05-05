@@ -20,10 +20,21 @@ func GetStockData(c *gin.Context) {
 }
 
 func GetTopMovers(c *gin.Context) {
-	topMoversData := service.FetchTopMovers()
-	if topMoversData == nil {
-		c.JSON(500, gin.H{"error": "Failed to fetch top movers data"})
+	topMoversData, err := service.FetchTopMovers()
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
 	c.JSON(http.StatusOK, topMoversData)
+}
+
+func GetStockOverview(c *gin.Context) {
+	function := c.DefaultQuery("function", "OVERVIEW")
+	symbol := c.DefaultQuery("symbol", "IBM")
+	stockOverviewData, err := service.FetchStockOverview(function, symbol)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+	c.JSON(http.StatusOK, stockOverviewData)
 }
