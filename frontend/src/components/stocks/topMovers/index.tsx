@@ -1,6 +1,6 @@
 'use client';
 
-import { useFetchTopMovers } from "@/hooks/queries/useFetchStocks";
+import { useFetchTopMovers } from "@/hooks/queries";
 import TopMoverCard from "./TopMoverCard";
 import { StockDetails } from "@/types/topmover";
 
