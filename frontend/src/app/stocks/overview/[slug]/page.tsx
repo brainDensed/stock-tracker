@@ -1,7 +1,6 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import { Card } from "@/components/ui/card";
 import { useParams } from "next/navigation";
 import { api } from "@/lib/axios";
