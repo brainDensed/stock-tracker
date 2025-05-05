@@ -22,7 +22,7 @@ function Section({ title, data }: { title: string; data: StockDetails[] }) {
 export default function TopMovers() {
   const { data, isLoading, isError } = useFetchTopMovers();
 
-  if (isLoading) return <p className="text-center mt-10">Fetching today's top movers...</p>;
+  if (isLoading) return <p className="text-center mt-10">Fetching today&apos;s top movers...</p>;
   if (isError) return <p className="text-center mt-10 text-red-500">Failed to load news.</p>;
 
   return (
