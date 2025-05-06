@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Card } from "@/components/ui/card";
 import { useParams } from "next/navigation";
 import { api } from "@/lib/axios";
+import TrackPrice from "./trackPrice";
 
 interface StockOverview {
     Symbol: string;
@@ -32,7 +33,7 @@ const Overview = () => {
             return data;
         },
     });
-
+    
     if (isLoading) return <div>Loading...</div>;
 
     return (
@@ -41,7 +42,7 @@ const Overview = () => {
                 <h1 className="text-3xl font-bold">{overview?.Name} ({overview?.Symbol})</h1>
                 <span className="text-lg text-muted-foreground">{overview?.Exchange}</span>
             </div>
-
+            <TrackPrice symbol={slug} />
             <Card className="p-6">
                 <h2 className="text-xl font-semibold">Company Overview</h2>
                 <p className="text-muted-foreground mb-6">{overview?.Description}</p>
