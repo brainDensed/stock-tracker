@@ -1,4 +1,4 @@
-package models
+package stock
 
 type StockDetails struct {
 	Ticker           string `json:"ticker"`

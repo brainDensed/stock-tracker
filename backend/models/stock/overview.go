@@ -1,4 +1,4 @@
-package models
+package stock
 
 type StockOverview struct {
 	Symbol                     string `json:"Symbol"`
