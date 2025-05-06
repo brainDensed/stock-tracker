@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { api } from "@/lib/axios";
 import { useRouter } from "next/navigation";
+import Navbar from "@/components/layout/navbar";
 
 const Profile = () => {
     const { data: user, isLoading, isError } = useUser();
@@ -29,6 +30,7 @@ const Profile = () => {
 
     return (
         <>
+        <Navbar />
             <Head>
                 <title>Profile</title>
             </Head>

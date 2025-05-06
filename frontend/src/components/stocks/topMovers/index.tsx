@@ -5,20 +5,20 @@ import TopMoverCard from "./TopMoverCard";
 import { StockDetails } from "@/types/topmover";
 
 function Section({ title, data }: { title: string; data: StockDetails[] }) {
-    return (
-      <div className="bg-white p-3 rounded-md shadow border border-gray-200">
-        <h3 className="text-lg font-semibold mb-2 text-gray-700">{title}</h3>
-        <div className="flex gap-3 overflow-x-auto" style={{ scrollbarWidth: "none" }}>
-          {data?.map((mover) => (
-            <div key={mover.ticker} className="snap-start">
-              <TopMoverCard mover={mover} />
-            </div>
-          ))}
-        </div>
+  return (
+    <div className="bg-white p-3 rounded-md shadow border border-gray-200">
+      <h3 className="text-lg font-semibold mb-2 text-gray-700">{title}</h3>
+      <div className="flex gap-3 overflow-x-auto" style={{ scrollbarWidth: "none" }}>
+        {data?.map((mover) => (
+          <div key={mover.ticker} className="snap-start">
+            <TopMoverCard mover={mover} />
+          </div>
+        ))}
       </div>
-    );
-  }
-  
+    </div>
+  );
+}
+
 export default function TopMovers() {
   const { data, isLoading, isError } = useFetchTopMovers();
 
@@ -26,8 +26,7 @@ export default function TopMovers() {
   if (isError) return <p className="text-center mt-10 text-red-500">Failed to load news.</p>;
 
   return (
-    <div className="p-6 space-y-8">
-      <h2 className="text-3xl font-bold text-gray-800">Top Movers</h2>
+    <div className="p-6 space-y-8 pt-24">
       {data && (
         <>
           <Section title="Top Gainers" data={data.top_gainers} />

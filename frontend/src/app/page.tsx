@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-gradient-to-br from-blue-100 to-indigo-200 py-10">
+      <main className="min-h-screen bg-gradient-to-br from-blue-100 to-indigo-200 py-10 pt-24">
         <section className="max-w-5xl mx-auto px-4 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {news?.pages.map((page) =>
             page.data.map((article) => (
