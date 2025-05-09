@@ -1,4 +1,4 @@
-# ⚡ Full-Stack Auth Template — Go + Next.js + Redis + PostgreSQL
+#  Full-Stack Stock Tracker — Go + Next.js + Redis + PostgreSQL
 
 Secure, production-ready user authentication system built with:
 
@@ -14,6 +14,8 @@ Secure, production-ready user authentication system built with:
 
 ## 🔐 Features
 
+- ✅ **Daily stock price updates** using real APIs (eg. Alpha Vantage)
+- ✅ **Latest financial news integration** to stay market-aware
 - ✅ **Email verification** before user account is created  
 - ✅ **Logout from all devices** (invalidates all sessions)
 - ✅ **Modular Go backend** (easy to extend)
